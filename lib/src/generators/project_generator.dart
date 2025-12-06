@@ -69,11 +69,12 @@ class ProjectGenerator {
 
     // main with proper package name
     final mainContent = mainTemplateWithSl.replaceAll(r"$project", projectName);
-    await _createFile(p.join(lib, 'main.dart'), mainContent);
+    await _createFile(p.join(lib, 'main.dart'), mainContent, overwrite: true);
+    await _createFile(p.join(projectName, 'README.md'), mvvmReadmeTemplate,
+        overwrite: true);
     await _createFile(
-        p.join(projectName, 'MVVM_README.md'), mvvmReadmeTemplate);
-    await _createFile(
-        p.join(projectName, 'analysis_options.yaml'), mvvmAnalysisTemplate);
+        p.join(projectName, 'analysis_options.yaml'), mvvmAnalysisTemplate,
+        overwrite: true);
   }
 
   Future<void> _createFile(String path, String content,
