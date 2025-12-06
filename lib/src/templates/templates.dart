@@ -126,7 +126,7 @@ analyzer:
     one_member_abstracts: ignore
 ''';
 
-final String viewUsingValueNotifierTemplate(String feature, String className) => '''
+String viewUsingValueNotifierTemplate(String feature, String className) => '''
 import 'package:flutter/material.dart';
 import './${feature}_viewmodel.dart';
 
@@ -160,7 +160,7 @@ class ${className}View extends StatelessWidget {
 }
 ''';
 
-final String viewModelValueNotifierTemplate(String feature, String className) => '''
+String viewModelValueNotifierTemplate(String feature, String className) => '''
 import 'package:flutter/foundation.dart';
 
 class ${className}ViewModel {
@@ -174,7 +174,7 @@ class ${className}ViewModel {
 }
 ''';
 
-final String repoTemplate(String name, String className) => '''
+String repoTemplate(String name, String className) => '''
 abstract interface class ${className}Repo {
   ${className}Repo();
 
@@ -182,7 +182,7 @@ abstract interface class ${className}Repo {
 }
 ''';
 
-final String serviceTemplate(String name, String className) => '''
+String serviceTemplate(String name, String className) => '''
 import '../repos/${name}_repo.dart';
 
 class ${className}Service implements ${className}Repo {
@@ -196,7 +196,7 @@ class ${className}Service implements ${className}Repo {
 }
 ''';
 
-final String modelJsonTemplate(String name, String className) => '''
+String modelJsonTemplate(String name, String className) => '''
 import 'package:json_annotation/json_annotation.dart';
 
 part '${name}_model.g.dart';
@@ -209,11 +209,11 @@ class ${className}Model {
   });
 
   factory ${className}Model.fromJson(Map<String, dynamic> json) 
-          => _\\$${className}ModelFromJson(json);
+          => _\$${className}ModelFromJson(json);
 
   final String id;
   final String name;
 
-  Map<String, dynamic> toJson() => _\\$${className}ModelToJson(this);
+  Map<String, dynamic> toJson() => _\$${className}ModelToJson(this);
 }
 ''';

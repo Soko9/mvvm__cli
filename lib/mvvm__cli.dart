@@ -1,4 +1,4 @@
-library mvvm_cli;
+library mvvm__cli;
 
 export 'src/cli_runner.dart';
 export 'src/commands/create_command.dart';
@@ -12,8 +12,12 @@ export 'src/templates/templates.dart';
 import 'dart:io' as io;
 import 'src/cli_runner.dart';
 
-Future<void> runCli(List<String> args,
-    {io.Stdin? stdin, io.Stdout? stdout, io.Stderr? stderr}) async {
+Future<void> runCli(
+  List<String> args, {
+  io.Stdin? stdin,
+  io.Stdout? stdout,
+  io.IOSink? stderr,
+}) async {
   final runner = makeRunner();
   try {
     await runner.run(args);

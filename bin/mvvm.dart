@@ -1,7 +1,7 @@
 // Lightweight entrypoint. Run: dart pub global activate --source path .
 
 import 'dart:io';
-import 'package:mvvm_cli/mvvm_cli.dart';
+import '../lib/mvvm__cli.dart';
 
 Future<void> main(List<String> args) async {
   // forward to library CLI runner
