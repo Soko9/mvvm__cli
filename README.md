@@ -23,4 +23,4 @@ MVVM CLI is a Dart-based command-line tool designed to **kickstart Flutter proje
 ### From GitHub (recommended)
 
 ```bash
-dart pub global activate -sgit https://github.com/Soko9/mvvm__cli.git
+dart pub global activate -s git https://github.com/Soko9/mvvm__cli.git
